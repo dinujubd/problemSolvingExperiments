@@ -1,5 +1,5 @@
-const combination = require("./combination")
+const combination_ncr = require("./combination_ncr")
 
 module.exports = {
-    combination: combination
+    combination_ncr
 }

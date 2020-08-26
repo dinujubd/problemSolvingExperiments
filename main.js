@@ -1,2 +1,2 @@
 const bt = require("./backtrack")
-bt.combination();
+console.log(bt.combination_ncr([1, 2, 3, 4], 3));
