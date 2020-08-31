@@ -1,6 +1,6 @@
 const max_sub_array_of_size_k = (k, arr) => {
 
-    let windowStart, windowSum = 0;
+    let windowSum = 0.0, windowStart = 0;
     let result = [];
 
     for (let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
