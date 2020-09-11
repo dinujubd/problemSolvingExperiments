@@ -1,40 +1,3 @@
-
-const findCenters = (g) => {
-    let n = g.length;
-    let degree = Array.from({ length: n }).fill(0);
-    let leaves = [];
-
-    for (let i = 0; i < g.length; i++) {
-        degree[i] = g[i].length
-
-        if (degree[i] <= 1) {
-            leaves.push(i)
-            degree[i] = 0
-        }
-    }
-
-    let count = leaves.length;
-
-    while (count < n) {
-        let new_leaves = [];
-
-        leaves.forEach(node => {
-            g[node].forEach(neighbor => {
-                degree[neighbor] = degree[neighbor] - 1
-                if (degree[neighbor] === 1) {
-                    new_leaves.push(neighbor);
-                }
-            })
-            degree[node] = 1
-        });
-        count += new_leaves.length;
-        leaves = new_leaves;
-    }
-
-    return leaves;
-
-}
-
 const addUndirectedEdge = (tree, from, to) => {
     let f = tree[from];
     let t = tree[to];
@@ -44,15 +7,10 @@ const addUndirectedEdge = (tree, from, to) => {
 }
 
 
-const findTreeCenters = (treeEdgeArr) => {
-    const tree = Array.from({ length: 9 }).map(x => [])
-
-    treeEdgeArr.forEach(x => addUndirectedEdge(tree, x[0], x[1]))
-
+const findTreeCenters = (tree) => {
     const n = tree.length;
     let degree = Array.from({ length: n }).fill(0);
 
-    // Find all leaf nodes
     let leaves = [];
 
     for (let i = 0; i < n; i++) {
@@ -66,18 +24,18 @@ const findTreeCenters = (treeEdgeArr) => {
 
     let processedLeafs = leaves.length;
 
-    // Remove leaf nodes and decrease the degree of each node adding new leaf nodes progressively
-    // until only the centers remain.
     while (processedLeafs < n) {
         let newLeaves = [];
-        for (let node in leaves) {
-            for (let  neighbor in tree[node]) {
+
+        leaves.forEach(node => {
+            tree[node].forEach(neighbor => {
                 if (--degree[neighbor] == 1) {
                     newLeaves.push(neighbor);
                 }
-            }
+            })
+
             degree[node] = 0;
-        }
+        })
         processedLeafs += newLeaves.length;
         leaves = newLeaves;
     }
@@ -85,6 +43,20 @@ const findTreeCenters = (treeEdgeArr) => {
     return leaves;
 }
 
-//findCenters()
+const graph = Array.from({ length: 10 }).map(x => [])
+
+addUndirectedEdge(graph, 0, 1);
+addUndirectedEdge(graph, 2, 1);
+addUndirectedEdge(graph, 2, 3);
+addUndirectedEdge(graph, 3, 4);
+addUndirectedEdge(graph, 5, 3);
+addUndirectedEdge(graph, 9, 3);
+addUndirectedEdge(graph, 2, 6);
+addUndirectedEdge(graph, 6, 7);
+addUndirectedEdge(graph, 6, 8);
+
+
+findTreeCenters(graph)
+
 
 module.exports = findTreeCenters
