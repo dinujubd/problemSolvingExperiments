@@ -1,13 +1,13 @@
-const generateSuffixArray = (str, arr, ind) => {
+const generate_suffix_array = (str, arr, ind) => {
     if (str === '') return;
     arr.push({ str: str, ind: ind })
-    generateSuffixArray(str.substring(1), arr, ind + 1)
+    generate_suffix_array(str.substring(1), arr, ind + 1)
 }
 
-const suffixArray = (str) => {
+const suffix_array = (str) => {
     let arr = [];
-    generateSuffixArray(str, arr, 0);
+    generate_suffix_array(str, arr, 0);
     return arr.sort((a, b) => a.str.localeCompare(b.str));
 }
 
-module.exports = suffixArray
+module.exports = suffix_array
