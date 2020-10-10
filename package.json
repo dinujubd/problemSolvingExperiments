@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/dinujubd/problemSolvingExperiments/issues"
   },
-  "homepage": "https://github.com/dinujubd/problemSolvingExperiments#readme"
+  "homepage": "https://github.com/dinujubd/problemSolvingExperiments#readme",
+  "devDependencies": {
+    "jest": "^26.5.2"
+  }
 }
