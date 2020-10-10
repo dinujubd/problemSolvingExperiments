@@ -17,7 +17,7 @@
     "url": "https://github.com/dinujubd/problemSolvingExperiments/issues"
   },
   "homepage": "https://github.com/dinujubd/problemSolvingExperiments#readme",
-  "devDependencies": {
+  "dependencies": {
     "jest": "^26.5.2"
   }
 }
