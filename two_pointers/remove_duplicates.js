@@ -1,4 +1,16 @@
-const solution = (arr) => arr.filter((item, i) => !(i > 0 && arr[i - 1] === item));
+const removeDuplicates = function (arr) {
+    let i = 1, j = 1;
 
+    while (j < arr.length) {
+        if (arr[i - 1] !== arr[j]) {
+            arr[i] = arr[j];
+            i += 1;
+        }
+        j += 1;
+    }
 
-module.exports = solution
+    return arr.slice(0, i);
+
+};
+
+module.exports = removeDuplicates

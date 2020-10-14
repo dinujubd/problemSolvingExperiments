@@ -6,5 +6,5 @@ test("pairOfTargettedSum should return correct value", () => {
 })
 
 test("removeDuplicates should remove the remove the duplicates", () => {
-    expect(removeDuplicates([1, 2, 2, 2, 3, 4, 4, 4, 4, 4, 4, 5])).toEqual([1, 2, 3, 4, 5])
+    expect(removeDuplicates([1, 2, 2, 2, 3, 4, 4, 4, 4, 4, 4, 6])).toEqual([1, 2, 3, 4, 6])
 })
