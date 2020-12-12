@@ -1,0 +1,1 @@
+module.exports = (X, Y, D) => Math.ceil(Math.abs(Y - X) / D);
