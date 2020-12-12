@@ -1,0 +1,1 @@
+module.exports = (A) => A.reduce((prev, cur) => prev ^ cur, 0)
