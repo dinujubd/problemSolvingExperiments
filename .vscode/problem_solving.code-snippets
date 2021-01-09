@@ -20,7 +20,7 @@
 		"body": [
 			"const solution = require('../$1')",
 			"",
-			"describe(('$1') => {",
+			"describe('$1', () => {",
 			"    it('Should work', () => {",
 			"        const $3 = solution($4)",
 			"        expect($3).toBe($5);",
@@ -33,7 +33,7 @@
 	"addSolution": {
 		"body": [
 			"const $1 = function($2) {",
-			"$3",
+			"  $3",
 			"}",
 			"",
 			"module.exports = $1"
