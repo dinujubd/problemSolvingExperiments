@@ -1,6 +1,6 @@
 
 const combinationRecursion = (res, arr, tmp, lim, start) => {
-    if (tmp.length === lim) {
+    if (tmp.length === lim && tmp.length) {
         res.push([...tmp])
     }
 
