@@ -12,6 +12,4 @@ const sort = (arr) => {
     return arr
 }
 
-console.log(sort([4, 1, 3, 5, 2]))
-
 module.exports = sort

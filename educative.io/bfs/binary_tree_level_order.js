@@ -1,22 +1,22 @@
 const binary_tree_level_order = function (root) {
     if (!root) return [];
-    const result = [];
     const q = [root];
+    const res = [];
 
     while (q.length) {
+        let curLen = q.length;
         const curLevel = [];
-        let levelLength = q.length;
-        while (levelLength > 0) {
+        while (curLen) {
             const cur = q.shift();
             curLevel.push(cur.value);
             if (cur.left) q.push(cur.left)
             if (cur.right) q.push(cur.right)
-            levelLength--;
+            curLen--;
         }
-        result.push(curLevel);
+        res.push(curLevel);
     }
 
-    return result;
+    return res;
 };
 
 class TreeNode {
