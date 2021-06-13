@@ -5,25 +5,23 @@ class Interval {
     }
 }
 
-const merge = function (intervals) {
+const merge = function (inv) {
     let merged = [];
     
-    if (intervals && intervals.length === 1) return intervals[0]
+    if (inv && inv.length === 1) return [inv[0]]
 
-    intervals = intervals.sort((x, y) => x.start - y.start)
+    inv = inv.sort((x, y) => x.start - y.start);
+    
+    merged.push(inv[0]);
 
-    merged.push(intervals[0])
-
-    for (let i = 1; i < intervals.length; i++) {
-        const interval = intervals[i];
-        const latest = merged[merged.length - 1]
-
-        if (interval.start > latest.end && interval.end > latest.end) {
-            merged.push(interval);
+    for(let i = 1; i < inv.length; i++) {
+        const prev = merged[merged.length - 1];
+        const cur = inv[i];
+        if(cur.start > prev.end) {
+            merged.push(cur);
         } else {
-            latest.end = Math.max(interval.end, latest.end);
+            prev.end = Math.max(prev.end, cur.end)
         }
-
     }
 
     return merged;

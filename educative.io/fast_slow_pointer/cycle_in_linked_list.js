@@ -6,16 +6,15 @@ class Node {
 }
 
 const has_cycle = function (head) {
-    let fastPointer = head.next;
-    let slowPointer = head;
+    let slow = head;
+    let fast = head;
 
-    while(fastPointer.next !== null) {
-        if(fastPointer === slowPointer) {
-            return true;
-        }
-        fastPointer = fastPointer.next.next;
-        slowPointer = slowPointer.next;
-    }
+    while(fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+        
+        if(fast === slow) return true; 
+    }   
 
     return false
 }
