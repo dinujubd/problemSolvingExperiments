@@ -1,16 +1,16 @@
 
-const combinationRecursion = (res, arr, tmp, start) => { 
-    if(tmp.length)
-        res.push([...tmp])
+const recursion_helper = (res, arr, tmp, start) => {
+    res.push([...tmp]);
+
     for (let i = start; i < arr.length; i++) {
-        tmp.push(arr[i])
-        combinationRecursion(res, arr, tmp, i + 1)
-        tmp.pop(arr[i])
+        tmp.push(arr[i]);
+        recursion_helper(res, arr, tmp, i + 1);
+        tmp.pop();
     }
 }
 const combination = (arr) => {
     let res = [];
-    combinationRecursion(res, arr, [], 0);
+    recursion_helper(res, arr, [], 0);
     return res;
 }
 

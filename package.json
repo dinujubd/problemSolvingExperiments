@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/dinujubd/problemSolvingExperiments#readme",
   "dependencies": {
-    "jest": "^26.5.2"
+    "jest": "^27.0.4"
   }
 }
