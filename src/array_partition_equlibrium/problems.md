@@ -1,0 +1,8 @@
+- [x] Equal partition in sorted array
+- [x] Equal n partition in sorted array
+- [x] Equilibrium point on sorted array
+- [x] Equal partition in unsorted array
+- [ ] Minimum Diff subarray in unsorted array
+- [ ] Equilibrium in unsorted array
+- [ ] Equal n partition in unsorted array
+- [ ] n equilibrium point in unsorted array
