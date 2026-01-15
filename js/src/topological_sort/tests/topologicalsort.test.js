@@ -1,7 +1,7 @@
-const { toplogicalSort } = require('../.')
+const topoligical_sort = require('../topological_sort')
 
 test('topolicalSort should sort graph topologically', () => {
-    expect(toplogicalSort(
+    expect(topoligical_sort(
         7, [
         [6, 4],
         [6, 2],
